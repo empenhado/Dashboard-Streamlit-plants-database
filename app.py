@@ -251,10 +251,12 @@ with aba4:
     st.markdown(
         """
 **(a) Quais variáveis exibem forte assimetria e qual a razão prática?**
-*()*
+
+Considerando a base completa (150 registros), nenhuma variável tem assimetria forte de fato: o coeficiente de assimetria fica abaixo de 0,35 em valor absoluto em todas. O diagnóstico de média × mediana destaca o **Comprimento da Pétala** (média 3,76 < mediana 4,35, diferença de 0,59 cm) e, em menor grau, a **Largura da Pétala** (1,20 < 1,30). Essa diferença não vem de uma cauda longa, e sim da mistura de espécies: a *setosa* tem pétalas muito menores (média de 1,46 cm) que a *versicolor* (4,26 cm) e a *virginica* (5,55 cm), o que forma dois grupos e puxa a média para um valor que quase nenhuma flor tem. Na prática, a média global das pétalas não representa bem nenhuma espécie. Recomenda-se usar a mediana e, principalmente, analisar as medidas por espécie. As sépalas são aproximadamente simétricas.
 
 **(b) Os outliers decorrem de erros ou refletem comportamentos legítimos do domínio?**
-*()*
+
+Pelo critério de Tukey (1,5 × IQR), só a **Largura da Sépala** apresenta outliers: 4 registros (2,7%), fora do intervalo de 2,05 a 4,05 cm. Três são da *setosa* (larguras de 4,1, 4,2 e 4,4 cm) e um da *versicolor* (2,0 cm). Esses valores não parecem erros, estão numa faixa possível para uma sépala e são coerentes com a espécie de cada flor. Por isso, tratam-se de variação natural entre indivíduos, e não de falha de medição. A decisão mais adequada é manter os registros e apenas sinalizá-los, já que removê-los eliminaria informação real. Sem uma fonte para conferir as medições originais, não é possível garantir que não houve erro, mas nada nos dados indica isso.
 
 **(c) Quais pares exibem correlação relevante e qual o impacto prático?**
 *()*
