@@ -259,11 +259,16 @@ Considerando a base completa (150 registros), nenhuma variável tem assimetria f
 Pelo critério de Tukey (1,5 × IQR), só a **Largura da Sépala** apresenta outliers: 4 registros (2,7%), fora do intervalo de 2,05 a 4,05 cm. Três são da *setosa* (larguras de 4,1, 4,2 e 4,4 cm) e um da *versicolor* (2,0 cm). Esses valores não parecem erros, estão numa faixa possível para uma sépala e são coerentes com a espécie de cada flor. Por isso, tratam-se de variação natural entre indivíduos, e não de falha de medição. A decisão mais adequada é manter os registros e apenas sinalizá-los, já que removê-los eliminaria informação real. Sem uma fonte para conferir as medições originais, não é possível garantir que não houve erro, mas nada nos dados indica isso.
 
 **(c) Quais pares exibem correlação relevante e qual o impacto prático?**
-*()*
+
+Os pares de variáveis **Comprimento_Petala × Largura_Petala** (r ≈ 0,96) e **Comprimento_Sepala × Comprimento_Petala** (r ≈ 0,87) exibem uma forte correlação linear positiva.  
+**Impacto prático:** Existe uma relação de crescimento proporcional direto no desenvolvimento morfológico da flor. Na prática, a dimensão do comprimento da pétala permite prever a sua largura com elevada precisão, demonstrando redundância na recolha de dados e dispensando a necessidade de medição dupla em triagens rápidas.
 
 **(d) Que decisão um gestor poderia tomar a partir dos dados filtrados?**
-*()*
-        """
+
+Com base na separabilidade dos dados e nas correlações identificadas, um gestor pode tomar duas decisões estratégicas:
+1. **Otimização da recolha no campo:** Priorizar exclusivamente a medição das **pétalas** (comprimento e largura) nos processos manuais de inspeção, dispensando a medição das sépalas e reduzindo o tempo de triagem por muda.
+
+2. **Automação de triagem por Machine Learning:** Implementar um algoritmo simples de classificação em sistemas automatizados de estufas (por exemplo, definir que qualquer flor com comprimento de pétala $< 2,5 { cm}$ pertence à espécie *setosa*), garantindo alta precisão operacional com baixo custo computacional."""
     )
 
 # Identificação do Dataset
